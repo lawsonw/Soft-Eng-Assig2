@@ -1,0 +1,4 @@
+# Files to not be pushed to GitHub.com #
+###################
+*.class
+*.java~
