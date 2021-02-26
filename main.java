@@ -1,7 +1,7 @@
 /* Title: something something Near Misses?
  * File name: ???
  * External files: ???
- * Generated files: small_output.txt ???
+ * Generated files: small_output.txt is generated to record the list of nearest misses.
  * Programmers: Russell Ketterer, Benjamin Crawford, and William Lawson
  * Email addresses: kettererr@duq.edu, crawfordb2@duq.edu, lawsonw@duq.edu
  * COSC 445W-01 - Software Engineering
