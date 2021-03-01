@@ -36,10 +36,10 @@ class Main {
         k = sc.nextInt();
       }
     
-      System.out.print("Give a value for n that's above 2.");
+      System.out.print("Give a value for n that's above 2 but below 12.");
       int n = sc.nextInt();
-      while (n <= 2) {
-        System.out.println("Give a new value for n that's above 2.");
+      while (n <= 2 || n >= 12) {
+        System.out.println("Give a new value for n that's between 2 and 12.");
         n = sc.nextInt();
       }
     
@@ -58,26 +58,26 @@ class Main {
       FileWriter myWriter = new FileWriter("small_output.txt");
       myWriter.write("For n = " + n + ":\n");
       
-      double z, z_up, z_down;
-      double smallestMiss = 1;
+      double z, zn, z_up, z_down, test_up, test_down;
+      double smallestMiss = 100;
       for (int x=10; x<=k; x++) {
-        for (int y=10; y<=k; y++) {
-          z = Math.pow(Math.pow(x, n) + Math.pow(y, n), 1.0 / n); //z = nth root of (x^n + y^n)
+        for (int y=x; y<=k; y++) {
+          zn = Math.pow(x, n) + Math.pow(y, n);
+          z = Math.pow(zn, 1.0 / n); //z = nth root of (x^n + y^n)
           z_up = Math.ceil(z); //natural number above z
           z_down = Math.floor(z); //natural number below z
-          if ((z_up - z) > (z - z_down)) {
-            if (z/z_down < smallestMiss) {
-              smallestMiss = z/z_down;
-              System.out.println(z_down + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y);
-              myWriter.write(z_down + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y + "\n");
-            }
+          test_up = (Math.pow(z_up, n) - zn) / zn;
+          test_down = (zn - Math.pow(z_down, n)) / zn;
+          
+          if ((test_up > test_down) && test_down < smallestMiss) {
+            smallestMiss = test_down;
+            System.out.println(z_down + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y);
+            myWriter.write(z_down + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y + "\n");
           }
-          else if ((z_up - z) <= (z - z_down)) {
-            if ((1 - z/z_up) < smallestMiss) {
-              smallestMiss = 1 - z/z_up;
-              System.out.println(z_up + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y);
-              myWriter.write(z_up + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y + "\n");
-            }
+          else if ((test_up < test_down) && test_up < smallestMiss) {
+            smallestMiss = test_up;
+            System.out.println(z_up + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y);
+            myWriter.write(z_up + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y + "\n");
           }
           else {
             System.out.println("error");
