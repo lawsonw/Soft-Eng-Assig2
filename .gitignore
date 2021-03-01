@@ -1,0 +1,6 @@
+# Files to not be pushed to GitHub.com #
+###################
+*.class
+*.java~
+small_output.txt
+EclipseCompiler.txt
