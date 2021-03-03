@@ -69,7 +69,7 @@ class Main {
           test_up = (Math.pow(z_up, n) - zn) / zn;
           test_down = (zn - Math.pow(z_down, n)) / zn;
           
-          if ((test_up > test_down) && test_down < smallestMiss) {
+          if ((test_up >= test_down) && test_down < smallestMiss) {
             smallestMiss = test_down;
             System.out.println(z_down + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y);
             myWriter.write(z_down + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y + "\n");
@@ -78,6 +78,8 @@ class Main {
             smallestMiss = test_up;
             System.out.println(z_up + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y);
             myWriter.write(z_up + " is " + (smallestMiss*100) + "% away from " + z + " for x = " + x + " and y = " + y + "\n");
+          }
+          else if (test_up > smallestMiss && test_down > smallestMiss) {
           }
           else {
             System.out.println("error");
