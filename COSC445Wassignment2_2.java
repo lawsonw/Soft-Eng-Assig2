@@ -17,7 +17,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-class COSC445Wassignment2_1 {
+class COSC445Wassignment2_2 {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     
