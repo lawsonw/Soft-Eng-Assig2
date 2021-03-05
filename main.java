@@ -1,14 +1,14 @@
-/* Title: something something Near Misses?
+/* Title: Fermat's Near Miss Finder
  * File name: ???
- * External files: ???
+ * External files: No external files were used.
  * Generated files: small_output.txt is generated to record the list of nearest misses.
  * Programmers: Russell Ketterer, Benjamin Crawford, and William Lawson
  * Email addresses: kettererr@duq.edu, crawfordb2@duq.edu, lawsonw@duq.edu
  * COSC 445W-01 - Software Engineering
- * Date completed: ???
- * Date submitted: ???
+ * Date completed: 3/6/2021
+ * Date submitted: 3/6/2021
  * Explanation: ???
- * External sources: ???
+ * External sources: We did not use any external sources.
 */
 
 import java.util.Scanner;
