@@ -1,5 +1,7 @@
 Fermat's Nearest-Miss Finder
-Fermat.jar
+Program executable file name: "Fermat.jar"
+Generated output text file name: "small_output.txt"
+By Russell Ketterer, Ben Crawford, William Lawson
 
 DESCRIPTION:
   Mathematician Pierre Fermat proved that no arbitrary natural numbers x, y, and z could 
@@ -14,7 +16,7 @@ DESCRIPTION:
 INSTALLATION:
   This program uses the Java Runtime Enrivonment to run the Fermat.jar file. The user should have this installed alongside the .jar file
   on their machine. To run the program, a user needs to open their command prompt, set the directory to the location of the .jar file, 
-  and enter the line "java -jar Fermat.jar". This will present a set of instrucitons and allow the user to begin their input of the
+  and enter the line "java -jar Fermat.jar". This will present a set of instructions and allow the user to begin their input of the
   program.
   
 INSTRUCTIONS:
