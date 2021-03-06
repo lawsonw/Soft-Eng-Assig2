@@ -1,6 +1,9 @@
 Fermat's Nearest-Miss Finder
+
 Program executable file name: "Fermat.jar"
+
 Generated output text file name: "small_output.txt"
+
 By Russell Ketterer, Ben Crawford, William Lawson
 
 # DESCRIPTION
