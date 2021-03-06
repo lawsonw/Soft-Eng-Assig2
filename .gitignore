@@ -2,5 +2,6 @@
 ###################
 *.class
 *.java~
+Fermat.drjava
 small_output.txt
 EclipseCompiler.txt
