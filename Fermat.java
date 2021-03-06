@@ -92,6 +92,12 @@ class Fermat {
         }
       }
       myWriter.close();
+      
+      //let the user press "enter" when they're finished
+      System.out.println("Press \"Enter\" once you're done.");
+      Scanner scan = new Scanner(System.in);
+      String throwaway = scan.nextLine();
+      scan.close();
     }
     catch (IOException e) { //if there's an error with FileWriter
       System.out.println("An error occurred in writing to small_output.txt.");
@@ -132,8 +138,7 @@ class Fermat {
       }
     }
       while(retVal < (low+1) || retVal > (high-1));
-    String throwaway = sc.nextLine();
-    sc.close();
+    //sc.close(); //removed because it caused a "no such element" error in JDE, despite working in DrJava
     return retVal;
   }
   
