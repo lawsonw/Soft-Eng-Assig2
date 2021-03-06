@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <drjava version="drjava-20160913-225446">
-  <project autorefresh="false" main="Fermat" manifest="" root="" work="">
-    <createjar file="Fermat.jar" flags="3"/>
+  <project autorefresh="false" main="main" manifest="" root="" work="">
+    <createjar file="Fermat.jar" flags="6"/>
     <source>
-      <file active="true" name="Fermat.java" package="" timestamp="06-Mar-2021 17:03:55">
-        <select from="4482" to="4482"/>
-        <scroll column="1287" row="0"/>
+      <file active="true" name="main.java" package="" timestamp="06-Mar-2021 17:16:04">
+        <select from="1340" to="1340"/>
+        <scroll column="297" row="0"/>
       </file>
     </source>
     <included/>

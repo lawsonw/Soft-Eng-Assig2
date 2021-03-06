@@ -23,14 +23,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-class Fermat {
+class main {
   public static void main(String[] args) {
     try {
       printDescription();
       writeFileCheck();
-      long n = setValue(2, 12, "n");
-      long kBound = setUpperBound((int)n);
-      long k = setValue(10, kBound, "k");
+      long n = setValue(2, 12, "n"); //the exponent to be used
+      long kBound = setUpperBound((int)n); //the maximum allowed value for k
+      long k = setValue(10, kBound, "k"); //the maximum value to be used for x and y
     
       findMiss(k, n);
     }
@@ -57,18 +57,26 @@ class Fermat {
       //FileWriter for recording outputs in a file
       FileWriter myWriter = new FileWriter("small_output.txt");
       myWriter.write("For n = " + n + ":\n");
-      double z, zn, z_up, z_down, test_up, test_down;
-      double smallestMiss = 100;
+      double z; //z^n = x^n + y^n
+      double zn; //z = nth root of (x^n + y^n)
+      double z_up; //natural number above z
+      double z_down; //natural number below z
+      double test_up; //test_up = z_up^n - z^n
+      double test_down; //test_down = z^n - z_down^n
+      
+      double smallestMiss = 100; //the smallest known miss, recorded as a decimal
+      //a value of 1 would mean that you missed by 100%
+      //100 is the starting value to guarantee that the first found value is also the starting smallest
 
       //test every possible numerical combination of x and y between 10 and k, inclusive, given n
       for (long x=10; x<=k; x++) {
         for (long y=x; y<=k; y++) {
-          zn = Math.pow(x, n) + Math.pow(y, n); //z^n = x^n + y^n
-          z = Math.pow(zn, 1.0 / n); //z = nth root of (x^n + y^n)
-          z_up = Math.ceil(z); //natural number above z
-          z_down = Math.floor(z); //natural number below z
-          test_up = (Math.pow(z_up, n) - zn) / zn; //test_up = z_up^n - z^n
-          test_down = (zn - Math.pow(z_down, n)) / zn; //test_down = z^n - z_down^n
+          zn = Math.pow(x, n) + Math.pow(y, n);
+          z = Math.pow(zn, 1.0 / n);
+          z_up = Math.ceil(z);
+          z_down = Math.floor(z);
+          test_up = (Math.pow(z_up, n) - zn) / zn;
+          test_down = (zn - Math.pow(z_down, n)) / zn;
           
           if (test_up >= test_down) { //if the upper bound is a bigger difference than the lower bound, or they're equal
             if (test_down <= smallestMiss) { //if the lower bound is a smaller difference than the smallest known miss
